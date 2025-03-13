@@ -7,6 +7,7 @@ import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -17,6 +18,7 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
+@Transactional      // 테스트 시에 실제 DB에 반영되지 않게(commit X) 할 수 있다.
 class OrderServiceTest {
 
     @Autowired
